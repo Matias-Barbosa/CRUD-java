@@ -30,4 +30,12 @@ public class Cliente {
     @Embedded
     private Endereco endereco;
 
+    public Cliente(DadosCadastroCliente dados) {
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.idade = dados.idade();
+        this.dataNascimento = dados.dataNascimento();
+        this.tipoConta = dados.tipoConta();
+        this.endereco = new Endereco(dados.endereco());
+    }
 }
