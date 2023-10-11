@@ -1,2 +1,2 @@
 ALTER TABLE clientes
-ADD COLUMN data_nascimento DATE;
+ADD COLUMN tipo_Conta VARCHAR(255) NOT NULL;
