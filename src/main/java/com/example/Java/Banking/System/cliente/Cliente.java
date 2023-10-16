@@ -38,4 +38,16 @@ public class Cliente {
         this.tipoConta = dados.tipoConta();
         this.endereco = new Endereco(dados.endereco());
     }
+
+    public void atualizarInformacoes(DadosAtualizacaoCliente dados) {
+        if(dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if(dados.email() != null) {
+            this.email = dados.email();
+        }
+        if(dados.endereco() != null) {
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
+    }
 }
