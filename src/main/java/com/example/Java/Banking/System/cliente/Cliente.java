@@ -30,7 +30,10 @@ public class Cliente {
     @Embedded
     private Endereco endereco;
 
+    private Boolean ativo;
+
     public Cliente(DadosCadastroCliente dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.idade = dados.idade();
@@ -49,5 +52,9 @@ public class Cliente {
         if(dados.endereco() != null) {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
